@@ -6,7 +6,7 @@ export default class A extends Component {
   render() {
     return(
         <FlexContainer onPress={()=> this.props.navigation.navigate('C')} >
-              <Text style={{fontSize:44,color:"orange"}}>B</Text>
+              <Text style={{fontSize:44,color:"#6b52ae"}}>B</Text>
         </FlexContainer>
     )
   }

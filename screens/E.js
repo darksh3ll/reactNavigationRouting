@@ -6,7 +6,7 @@ export default class A extends Component {
   render() {
     return (
       <FlexContainer >
-        <Text style={{ fontSize: 44, color: "orange" }}>E</Text>
+        <Text style={{ fontSize: 44, color: "#6b52ae" }}>E</Text>
         <Button
           color="orange"
           title="return to Home"
