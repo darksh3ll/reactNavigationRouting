@@ -8,7 +8,7 @@ export default class A extends Component {
       <FlexContainer >
         <Text style={{ fontSize: 44, color: "#6b52ae" }}>E</Text>
         <Button
-          color="orange"
+          color="#24292e"
           title="return to Home"
           onPress={() => this.props.navigation.popToTop()}
         />

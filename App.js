@@ -75,10 +75,10 @@ const NumberStack = createStackNavigator({
 const AppStack = createBottomTabNavigator(
   {
     Alphabet:AlphbetStack,
-    NumberStack:NumberStack
+    Numbers:NumberStack
 },
   {
-    order: ['Alphabet','NumberStack'],
+    order: ['Alphabet','Numbers'],
     tabBarOptions: {
       activeBackgroundColor: '#6b52ae',
       inactiveBackgroundColor: '#FFF',
