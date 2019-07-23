@@ -1,7 +1,14 @@
 import React from "react";
-import { View, Text } from "react-native";
-import { createStackNavigator,createAppContainer,createBottomTabNavigator,createSwitchNavigator } from "react-navigation";
+import
+{
+  createStackNavigator,
+  createAppContainer,
+  createBottomTabNavigator,
+  createSwitchNavigator
+} from "react-navigation";
+
 import Home from './screens/Home'
+import List from './screens/List'
 import A from './screens/A'
 import B from './screens/B'
 import C from './screens/C'
@@ -13,79 +20,64 @@ import Three from './screens/Three';
 import Four from './screens/Four';
 import Five from './screens/Five';
 
-
 const defaultNavigationOptions = {
-  headerStyle: { backgroundColor: '#6b52ae', borderBottomWidth: 0 },
-  headerTintColor: '#fff',
+  headerStyle: { backgroundColor: '#6b52ae' },
   headerBackTitle: null,
 };
 
-const HomeStack = createStackNavigator({
-  Home:{
-    screen:Home,
+const HomeStack = createStackNavigator(
+  {
+    Home: Home
   },
-})
 
-const AlphbetStack = createStackNavigator({
-  A: {
-    screen: A
-  },
-  B: {
-    screen: B
-  },
-  C: {
-    screen: C
-  },
-  D: {
-    screen: D
-  },
- E: {
-    screen: E
+)
+
+const ListStack = createStackNavigator(
+  {
+    List:List
   }
-},
-{
-  defaultNavigationOptions,
+)
+const AlphbetStack = createStackNavigator(
+  {
+    A: A,
+    B: B,
+    C: C,
+    D: D,
+    E: E
+  },
+  {
+    defaultNavigationOptions,
   }
 );
 
-const NumberStack = createStackNavigator({
- One: {
-    screen: One
+const NumberStack = createStackNavigator(
+  {
+    One: One,
+    Two: Two,
+    Three: Three,
+    Four: Four,
+    Five: Five
   },
-  Two: {
-    screen: Two
-  },
-  Three: {
-    screen: Three
-  },
-  Four: {
-    screen: Four
-  },
- Five: {
-    screen: Five
-  },
-
-},
-{
-  defaultNavigationOptions,
+  {
+    defaultNavigationOptions,
   }
-
 );
 
 const AppStack = createBottomTabNavigator(
   {
-    Alphabet:AlphbetStack,
-    Numbers:NumberStack
-},
+    Alphabet: AlphbetStack,
+    Numbers: NumberStack,
+    ListStack: ListStack
+  },
   {
-    order: ['Alphabet','Numbers'],
+    order: ['Alphabet', 'Numbers','ListStack'],
     tabBarOptions: {
       activeBackgroundColor: '#6b52ae',
       inactiveBackgroundColor: '#FFF',
-      inactiveTintColor:'black',
-      activeTintColor:'white',
-      labelStyle:'#FFF',
-      showLabel:true,
+      inactiveTintColor: 'black',
+      activeTintColor: 'white',
+      labelStyle: '#FFF',
+      showLabel: true,
     },
   }
 );
@@ -93,8 +85,7 @@ const AppStack = createBottomTabNavigator(
 const SwitchNavigator = createSwitchNavigator(
   {
     HomeStack: HomeStack,
-    AlphbetStack: AppStack,
-    NumberStack: NumberStack,
+    App: AppStack,
   },
   {
     initialRouteName: 'HomeStack',
