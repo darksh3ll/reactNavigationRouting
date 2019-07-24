@@ -1,4 +1,6 @@
 import React from "react";
+import { useScreens } from 'react-native-screens';
+useScreens();
 import
 {
   createStackNavigator,
